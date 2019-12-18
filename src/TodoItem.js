@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 class TodoItem extends Component{
     getStyle = () =>{
         return {
+            textAlign : 'left',
+            width :'30%',
+            background : '#f4f4f4',
+            padding : '10px',
+            margin : '8px',
+            borderBottom : '1px #ccc',
+            border : '20px #33C4D9',
             textDecoration : this.props.todo.completed ? 'line-through' : 'none'
         }
        
@@ -10,13 +17,15 @@ class TodoItem extends Component{
     render(){
         const {id,title} = this.props.todo;
         return (
-            <div style={this.getStyle()}>
+           <center><div style={this.getStyle()}>
+                
                 <p>
                     <input type="checkbox" onChange={this.props.markComplete.bind(this,id)}/>{' '}
                     {title}
                     <button style={btnStyle} onClick={this.props.getDelete.bind(this,id)}>X</button>
                 </p>
             </div>
+            </center>
         )
     }
 }

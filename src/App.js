@@ -46,7 +46,7 @@ class App extends Component {
     console.log(title);
     const newTodo = {
       id : uuid.v4(),
-      title : title,
+      title,
       completed : false
     }
     this.setState({ todos : [...this.state.todos, newTodo]});
@@ -54,8 +54,8 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+         <AddToDo addTodo={this.addTodo}/>
         <Todos todos = {this.state.todos} markComplete={this.markComplete} getDelete={this.getDelete}/>
-        <AddToDo addTodo={this.addTodo}/>
       </div>
     );
   }
