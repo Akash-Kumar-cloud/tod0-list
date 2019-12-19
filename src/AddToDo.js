@@ -35,7 +35,7 @@ class AddToDo extends Component{
           </Typography>
         </Toolbar>
       </AppBar>
-                <TextField id="standard-basic" type="text" name="title" label="List Name" value={this.state.title} onChange={this.onChange} />
+                <TextField id="standard-basic" type="text" name="title" label="List Name" value={this.state.title} onChange={this.onChange} required />
                 <Fab size="medium" color="secondary" aria-label="add" type="submit">
                  <AddIcon />
                 </Fab>
